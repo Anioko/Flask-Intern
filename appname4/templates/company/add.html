@@ -1,0 +1,26 @@
+{% extends "company/layout.html" %}
+
+{% block content %}
+<div class="container">
+  <form class="form-signin form-horizontal" action="" method="post" name="add">
+    <h2 class="form-signin-heading">Add the trainee position</h2>
+    {{form.hidden_tag()}}
+    {% for error in form.errors.username %}
+    <span class="text-danger">{{error}}</span>
+    {% endfor %}
+    {{form.company_name(class_="form-control", placeholder="Company Name")}}
+  {{form.url(class_="form-control", placeholder="Website")}}
+{{form.position(class_="form-control", placeholder="Open  Position")}}
+    {{form.start(class_="form-control", placeholder="Start date")}}
+    {{form.end(class_="form-control", placeholder="End date")}}
+	{{form.location(class_="form-control", placeholder="Location")}}
+	{{form.description(class_="form-control", placeholder="description")}}
+	{{form.type_fulltime(class_="form-control", placeholder="Is this fulltime?")}}
+	{{form.type_part_time(class_="form-control", placeholder="Is this part time?")}}
+	{{form.type_contract(class_="form-control", placeholder="Specify contract terms")}}
+    <input class="btn btn-primary btn-block" type="submit" value="Create Account">
+  </form>
+</div>
+
+{% endblock %}
+

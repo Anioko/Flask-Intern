@@ -1,0 +1,20 @@
+{% extends "company/layout.html" %}
+{% block content %}
+<div class="well">
+  <h2>Hello {{g.user.username}},</h2>
+  <p> </p></br>
+  <p> Welcome to Internly! We are entrepreneurs ourselves and we know what it means to have a good trainee. We want to help you get the best trainees for your startup or small business. The following are things you can do on our platform. You can add your open internship positions using the section below. 
+
+</div>
+<div class="panel panel-primary">
+            <div class="panel-heading">
+              <h3 class="panel-title">Add Unpaid Positions</h3>
+            </div>
+            <div class="panel-body"onclick="location.href='/company/add';" style="cursor: pointer;">
+              Click here to add open(unpaid) positions that you have.
+            </div>
+
+
+</div>
+
+{% endblock %}

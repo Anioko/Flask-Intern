@@ -1,0 +1,23 @@
+{% extends "school/base.html" %}
+{% block content %}
+<div class="well">
+  <h2>Hello {{g.user.username}},</h2>
+  <p> </p></br>
+  <p> Welcome to Internly! We believe that students from your department or institution will stand to gain an advantage from certain employers that are familiar with your school. 
+
+</div>
+    <div class="row">
+        <div class="col-sm-4">
+          <div class="panel panel-primary">
+            <div class="panel-heading">
+              <h3 class="panel-title">Add Interns</h3>
+            </div>
+            <div class="panel-body"onclick="location.href='/school/create';" style="cursor: pointer;">
+             Here you can add students to be displayed to the companies interested in finding interns. You can click here to access this feature.
+            </div>
+          </div>
+
+        </div><!-- /.col-sm-4 -->
+    </div>
+
+{% endblock %}

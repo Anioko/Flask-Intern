@@ -1,0 +1,61 @@
+{% extends "intern/base.html" %}
+{% block content %}
+<div class="well">
+  <h2>Hello {{g.user.username}},</h2>
+  <p> </p></br>
+  <p> Welcome to Internly! We believe that getting a trainee position can be instrumental to getting more experience and or getting a professional job.</p> 
+</div>
+
+
+{% for company in needs %}
+
+  <div class="col-sm-6 col-md-4">
+    <div class="thumbnail">
+      <div class="caption">
+        <h2>{{ company.position }} in {{ company.location }}</h2>
+        <p> {{ company.company_name }}</p>
+	    <p> {{ company.location }}</p>
+           <p>Start date {{ company.start }}</p>
+		    <!-- Button trigger modal -->
+		<button class="btn btn-primary btn-lg" onclick="location.href='{{ company.url }}';" target="_blank" style=" cursor: pointer;">
+
+		More
+		</button>
+
+		<!-- Modal --> <!---Disabled Modal Until later--------->
+		<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+						<h4 class="modal-title" id="myModalLabel">{{ needs.position }} in {{ company.location }}</h4>
+					</div>
+					<div class="modal-body">
+						    <p> {{ company.company_name }}</p>
+							<p>	{{ company.location }}</p>
+								Start date {{ company.start }}
+								and ends on the  {{ company.end }}
+							<p>	{{ company.description }}</p>
+							<p>	Full-Time:{{ company.type_fulltime }}</p>
+							<p>	Part-Time:{{ company.type_part_time }}</p>
+							<p>	Contract Terms:{{ company.type_part_time }}</p>
+								{{ company.url }}
+								
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal" >Close</button>
+						<button type="button" class="btn btn-primary" ><a href="http://{{ company.url }}">Visit</a></button>
+					</div>
+				</div>
+			</div>
+		</div>
+      </div>
+    </div>
+  </div>
+
+
+  {% else %}
+    <h3 class="span12">No open positions.</h3>
+  {% endfor %}
+
+{% endblock %}

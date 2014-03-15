@@ -1,0 +1,43 @@
+{% extends "public/layout.html" %}
+{% block content %}
+
+     <div class="jumbotron">
+        <h3>Select your account type below to signup! </h3>
+        <p class="lead"></p>
+		<div class="btn-group btn-group-justified">
+      <div class="btn-group" onclick="location.href='/intern/signup';" style="cursor: pointer;">
+        <button class="btn btn-default" type="button"><a href="/intern/signup" target="_blank" style="font-family:arial;color:white;font-size:20px;">Interns </a></button>
+      </div>
+      <div class="btn-group" onclick="location.href='/company/signup';" style="cursor: pointer;">
+        <button class="btn btn-default" type="button"><a href="/company/signup" target="_blank" style="font-family:arial;color:white;font-size:20px;">Companies </a></button>
+      </div>
+      <div class="btn-group" onclick="location.href='/school/signup';" style="cursor: pointer;">
+        <button class="btn btn-default" type="button" ><a href="/school/signup" target="_blank"style="font-family:arial;color:white;font-size:20px;">School Administrators </a></button>
+      </div>
+	   </div>
+	 </div>
+	 
+
+<div 
+</div>
+
+
+  
+<div class="bs-example">
+    
+  </div>
+  <style>
+  .btn-default {
+    background-color: #2aa4cf;
+    border-color: #CCCCCC;
+    color: #333333;
+	height: 60px;
+}
+.btn-default:hover, .btn-default:focus, .btn-default:active, .btn-default.active, .open .dropdown-toggle.btn-default {
+    background-color: #EBEBEB;
+    border-color: #ADADAD;
+    color: #333333;
+}
+  </style>
+     
+{% endblock %}
